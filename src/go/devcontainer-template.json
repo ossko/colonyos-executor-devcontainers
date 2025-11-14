@@ -1,0 +1,11 @@
+{
+    "id": "colonyos-executor-go",
+    "version": "1.0.0",
+    "name": "ColonyOS Go Executor",
+    "description": "A devcontainer template for ColonyOS Executor projects.",
+    "documentationURL": "https://github.com/ossko/colonyos-executor-go/tree/main/src/go",
+    "licenseURL": "https://github.com/ossko/colonyos-executor-go/blob/main/LICENSE",
+    "platforms": [
+        "Any"
+    ]
+}
