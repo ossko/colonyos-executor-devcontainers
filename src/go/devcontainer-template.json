@@ -1,5 +1,5 @@
 {
-    "id": "colonyos-executor-go",
+    "id": "go",
     "version": "1.0.0",
     "name": "ColonyOS Go Executor",
     "description": "A devcontainer template for ColonyOS Executor projects.",
