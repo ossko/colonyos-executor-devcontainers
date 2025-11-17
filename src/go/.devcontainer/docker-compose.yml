@@ -4,7 +4,7 @@ services:
     volumes:
       - configuration:/configuration
       - ./init-entrypoint.sh:/init-entrypoint.sh
-    command: ["/init-entrypoint.sh"]
+    entrypoint: ["/bin/sh", "-c", "chmod +x /init-entrypoint.sh && /init-entrypoint.sh"]
 
   timescaledb:
     image: timescale/timescaledb:latest-pg16
@@ -20,7 +20,7 @@ services:
     depends_on:
       init:
         condition: service_completed_successfully
-    entrypoint: ["/bin/bash", "./timescaledb-entrypoint.sh"]
+    entrypoint: ["/bin/sh", "-c", "chmod +x /timescaledb-entrypoint.sh && /timescaledb-entrypoint.sh"]
 
   colonyos:
     image: colonyos/colonies:v1.9.0
@@ -37,7 +37,7 @@ services:
     volumes:
       - configuration:/configuration
       - ./colonies-entrypoint.sh:/colonies-entrypoint.sh
-    entrypoint: ["/bin/sh", "./colonies-entrypoint.sh"]
+    entrypoint: ["/bin/sh", "-c", "chmod +x /colonies-entrypoint.sh && /colonies-entrypoint.sh"]
 
   devcontainer:
     build:
