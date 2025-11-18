@@ -4,7 +4,8 @@ services:
     volumes:
       - configuration:/configuration
       - ./init-entrypoint.sh:/init-entrypoint.sh
-    entrypoint: ["/bin/sh", "-c", "chmod +x /init-entrypoint.sh && /init-entrypoint.sh"]
+    entrypoint:
+      ["/bin/sh", "-c", "chmod +x /init-entrypoint.sh && /init-entrypoint.sh"]
 
   timescaledb:
     image: timescale/timescaledb:latest-pg16
@@ -16,11 +17,15 @@ services:
     volumes:
       - timescaledb_data:/var/lib/postgresql/data
       - configuration:/configuration
-      - ./timescaledb-entrypoint.sh:/timescaledb-entrypoint.sh
     depends_on:
       init:
         condition: service_completed_successfully
-    entrypoint: ["/bin/sh", "-c", "chmod +x /timescaledb-entrypoint.sh && /timescaledb-entrypoint.sh"]
+    entrypoint:
+      [
+        "/bin/sh",
+        "-c",
+        "source /configuration/postgres.env && docker-entrypoint.sh postgres",
+      ]
 
   colonyos:
     image: colonyos/colonies:v1.9.0
@@ -36,8 +41,12 @@ services:
       - timescaledb
     volumes:
       - configuration:/configuration
-      - ./colonies-entrypoint.sh:/colonies-entrypoint.sh
-    entrypoint: ["/bin/sh", "-c", "chmod +x /colonies-entrypoint.sh && /colonies-entrypoint.sh"]
+    entrypoint:
+      [
+        "/bin/sh",
+        "-c",
+        "source /configuration/colonyos.env && colonies server start --initdb",
+      ]
 
   devcontainer:
     build:
