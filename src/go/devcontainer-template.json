@@ -1,6 +1,6 @@
 {
     "id": "go",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "name": "ColonyOS Go Executor",
     "description": "A devcontainer template for developing ColonyOS Executor projects using Go.",
     "documentationURL": "https://github.com/ossko/colonyos-executor-devcontainers",
