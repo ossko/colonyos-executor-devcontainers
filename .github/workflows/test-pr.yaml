@@ -13,6 +13,7 @@ jobs:
         with:
           filters: |
             go: ./**/go/**
+            python: ./**/python/**
 
   test:
     needs: [detect-changes]

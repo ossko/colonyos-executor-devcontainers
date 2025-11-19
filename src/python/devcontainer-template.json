@@ -1,8 +1,8 @@
 {
-    "id": "go",
+    "id": "python",
     "version": "1.0.5",
-    "name": "ColonyOS Go Executor",
-    "description": "A devcontainer template for developing ColonyOS Executor projects using Go.",
+    "name": "ColonyOS Python Executor",
+    "description": "A devcontainer template for developing ColonyOS Executor projects using Python.",
     "documentationURL": "https://github.com/ossko/colonyos-executor-devcontainers",
     "licenseURL": "https://github.com/ossko/colonyos-executor-devcontainers/blob/main/LICENSE",
     "platforms": [
