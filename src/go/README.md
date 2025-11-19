@@ -1,7 +1,7 @@
 
 # ColonyOS Go Executor (go)
 
-A devcontainer template for ColonyOS Executor projects.
+A devcontainer template for developing ColonyOS Executor projects using Go.
 
 
 
