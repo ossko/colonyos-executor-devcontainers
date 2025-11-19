@@ -1,6 +1,6 @@
 {
     "id": "python",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "name": "ColonyOS Python Executor",
     "description": "A devcontainer template for developing ColonyOS Executor projects using Python.",
     "documentationURL": "https://github.com/ossko/colonyos-executor-devcontainers",
